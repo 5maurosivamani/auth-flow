@@ -1,13 +1,15 @@
-# Node.js Authentication Project
+# Auth Flow Project
 
-This project demonstrates a basic authentication system using Node.js, Express, and Sequelize.
+This project is a Node.js application that demonstrates a basic authentication flow.
 
 ## Features
 
 - User registration
 - User login
 - Password hashing
-- JWT token generation and verification
+- Token-based authentication
+
+## Technologies Used
 
 - Node.js
 - Express
@@ -27,13 +29,12 @@ This project demonstrates a basic authentication system using Node.js, Express, 
    cd auth-flow
    ```
 3. Install the dependencies:
+
    ```sh
    npm install
    ```
 
-## Configuration
-
-1. Create a `.env` file in the root directory and add the following environment variables:
+4. Create a `.env` file in the root directory and add the following environment variables:
 
    ```env
     PORT=5000
@@ -55,18 +56,15 @@ This project demonstrates a basic authentication system using Node.js, Express, 
     REFRESH_TOKEN_EXPIRES_IN=1d
    ```
 
-
-
 ## Usage
 
 1. Start the server:
-````
-   npm start or npm run dev
-````
+   ```sh
+   npm start
+   ```
+2. The server will be running at `http://localhost:3000`.
 
-2. The server will be running on `http://localhost:3000`.
-
-## API Endpoints
+## Endpoints
 
 - `POST /auth/register` - Register a new user
 - `POST /auth/login` - Login a user and receive a JWT token
@@ -74,9 +72,9 @@ This project demonstrates a basic authentication system using Node.js, Express, 
 - `GET /auth/refresh` - Refresh the access token using a valid refresh token
 - `GET /users` - Access a protected route (requires a valid JWT token)
 
-<!-- ## License -->
+<!-- ## License
 
-<!-- This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details. -->
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details. -->
 
 ## Contributing
 
@@ -85,3 +83,4 @@ Contributions are welcome! Please open an issue or submit a pull request.
 ## Contact
 
 For any questions or feedback, please contact [5maurosivami@gmail.com](mailto:5maurosivami@gmail.com).
+
