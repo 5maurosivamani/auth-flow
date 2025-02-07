@@ -109,10 +109,10 @@ async function logoutUser(req, res) {
       return res.json({ message: "Refresh Token does not exist!" });
     }
 
-    const tokenRecord = await RefreshToken.findOne({ where: { token: refreshToken } });
+    const tokenExist = await RefreshToken.findOne({ where: { token: refreshToken } });
 
     // if not 
-    if (!tokenRecord) {
+    if (!tokenExist) {
       return res.json({ message: "Refresh Token not found in database!" });
     }
 
@@ -128,7 +128,7 @@ async function logoutUser(req, res) {
     res.cookie("refreshToken", "", cookieConfig);
     return res.json({ message: "User logged out successfully!" });
   } catch (err) {
-    console.error("Logout Error:", error);
+    console.error("Logout Error:", err);
     return res.status(500).json({ message: "Internal Server Error" });
   }
 }
